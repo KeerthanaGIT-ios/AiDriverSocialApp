@@ -86,35 +86,35 @@ struct PostCardView: View {
     // MARK: - Post Image
 
     private func postImage(url: URL) -> some View {
-        AsyncImage(url: url) { phase in
-            switch phase {
-            case .success(let image):
-                image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: .infinity)
-                    .clipped()
-            case .failure:
-                Rectangle()
-                    .fill(Color(.systemGray5))
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 300)
-                    .overlay {
-                        Image(systemName: "photo")
-                            .font(.title)
-                            .foregroundStyle(.secondary)
-                    }
-            case .empty:
-                Rectangle()
-                    .fill(Color(.systemGray6))
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 300)
-                    .overlay(ProgressView())
-            @unknown default:
-                EmptyView()
+        GeometryReader { geo in
+            AsyncImage(url: url) { phase in
+                switch phase {
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geo.size.width, height: geo.size.width)
+                        .clipped()
+                case .failure:
+                    Rectangle()
+                        .fill(Color(.systemGray5))
+                        .frame(width: geo.size.width, height: geo.size.width)
+                        .overlay {
+                            Image(systemName: "photo")
+                                .font(.title)
+                                .foregroundStyle(.secondary)
+                        }
+                case .empty:
+                    Rectangle()
+                        .fill(Color(.systemGray6))
+                        .frame(width: geo.size.width, height: geo.size.width)
+                        .overlay(ProgressView())
+                @unknown default:
+                    EmptyView()
+                }
             }
         }
-        .aspectRatio(1, contentMode: .fill)
+        .aspectRatio(1, contentMode: .fit)
         .clipped()
         .overlay {
             HeartAnimationOverlay(isAnimating: $showHeartAnimation)
