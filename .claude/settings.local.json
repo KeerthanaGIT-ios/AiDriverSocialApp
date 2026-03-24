@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcodebuild -project /Users/keetzz/Desktop/SocialApp/SocialApp.xcodeproj -scheme SocialApp -destination 'id=6BB04091-DF5D-4091-8BDA-7AEA82566C35' -derivedDataPath /Users/keetzz/Desktop/SocialApp/build)",
+      "Bash(xcrun simctl:*)"
+    ]
+  }
+}
