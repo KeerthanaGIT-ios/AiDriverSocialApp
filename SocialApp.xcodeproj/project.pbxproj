@@ -39,6 +39,12 @@
 		FF000005 /* RecentSearchesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000014 /* RecentSearchesSection.swift */; };
 		FF000006 /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000015 /* UserSearchView.swift */; };
 		FF000007 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000016 /* UserProfileView.swift */; };
+		GG000001 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000010 /* Story.swift */; };
+		GG000002 /* HeartAnimationOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000011 /* HeartAnimationOverlay.swift */; };
+		GG000003 /* InstagramPostActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000012 /* InstagramPostActionBar.swift */; };
+		GG000004 /* StoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000013 /* StoryItemView.swift */; };
+		GG000005 /* StoriesBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000014 /* StoriesBarView.swift */; };
+		GG000006 /* PostCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000015 /* PostCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +81,12 @@
 		FF000014 /* RecentSearchesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesSection.swift; sourceTree = "<group>"; };
 		FF000015 /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
 		FF000016 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		GG000010 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		GG000011 /* HeartAnimationOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartAnimationOverlay.swift; sourceTree = "<group>"; };
+		GG000012 /* InstagramPostActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramPostActionBar.swift; sourceTree = "<group>"; };
+		GG000013 /* StoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryItemView.swift; sourceTree = "<group>"; };
+		GG000014 /* StoriesBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesBarView.swift; sourceTree = "<group>"; };
+		GG000015 /* PostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +145,7 @@
 			children = (
 				BB000010 /* User.swift */,
 				BB000011 /* Post.swift */,
+				GG000010 /* Story.swift */,
 				EE000010 /* Message.swift */,
 				EE000011 /* Conversation.swift */,
 			);
@@ -179,6 +192,9 @@
 			children = (
 				BB000013 /* AvatarView.swift */,
 				BB000014 /* PostActionBar.swift */,
+				GG000011 /* HeartAnimationOverlay.swift */,
+				GG000012 /* InstagramPostActionBar.swift */,
+				GG000013 /* StoryItemView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -188,6 +204,8 @@
 			children = (
 				BB000015 /* PostCell.swift */,
 				BB000016 /* FeedView.swift */,
+				GG000014 /* StoriesBarView.swift */,
+				GG000015 /* PostCardView.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -338,6 +356,12 @@
 				FF000005 /* RecentSearchesSection.swift in Sources */,
 				FF000006 /* UserSearchView.swift in Sources */,
 				FF000007 /* UserProfileView.swift in Sources */,
+				GG000001 /* Story.swift in Sources */,
+				GG000002 /* HeartAnimationOverlay.swift in Sources */,
+				GG000003 /* InstagramPostActionBar.swift in Sources */,
+				GG000004 /* StoryItemView.swift in Sources */,
+				GG000005 /* StoriesBarView.swift in Sources */,
+				GG000006 /* PostCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

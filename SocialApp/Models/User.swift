@@ -94,6 +94,9 @@ extension User {
         avatarURL: nil
     )
 
+    /// The current logged-in user (Alice).
+    static let currentUser = mockAlice
+
     static let mockAllUsers: [User] = [
         .mockAlice, .mockBob, .mockCarla, .mockDave,
         .mockEva, .mockFrank, .mockGrace, .mockHenry,
