@@ -21,12 +21,7 @@ struct ContentView: View {
                 case .feed:
                     NavigationStack { FeedView() }
                 case .search:
-                    NavigationStack {
-                        Text("Search")
-                            .font(.title2)
-                            .foregroundStyle(.secondary)
-                            .navigationTitle("Explore")
-                    }
+                    UserSearchView()
                 case .create:
                     NavigationStack {
                         Text("Create Post")

@@ -32,6 +32,13 @@
 		EE000009 /* ChatListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000018 /* ChatListRow.swift */; };
 		EE00000A /* ChatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000019 /* ChatDetailView.swift */; };
 		EE00000B /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000020 /* ChatListView.swift */; };
+		FF000001 /* UserSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000010 /* UserSearchService.swift */; };
+		FF000002 /* UserSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000011 /* UserSearchRepository.swift */; };
+		FF000003 /* UserSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000012 /* UserSearchViewModel.swift */; };
+		FF000004 /* UserSearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000013 /* UserSearchRow.swift */; };
+		FF000005 /* RecentSearchesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000014 /* RecentSearchesSection.swift */; };
+		FF000006 /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000015 /* UserSearchView.swift */; };
+		FF000007 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000016 /* UserProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +68,13 @@
 		EE000018 /* ChatListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListRow.swift; sourceTree = "<group>"; };
 		EE000019 /* ChatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailView.swift; sourceTree = "<group>"; };
 		EE000020 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		FF000010 /* UserSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchService.swift; sourceTree = "<group>"; };
+		FF000011 /* UserSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchRepository.swift; sourceTree = "<group>"; };
+		FF000012 /* UserSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewModel.swift; sourceTree = "<group>"; };
+		FF000013 /* UserSearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchRow.swift; sourceTree = "<group>"; };
+		FF000014 /* RecentSearchesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesSection.swift; sourceTree = "<group>"; };
+		FF000015 /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
+		FF000016 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +145,7 @@
 				BB000012 /* FeedViewModel.swift */,
 				EE000014 /* ChatListViewModel.swift */,
 				EE000015 /* ChatDetailViewModel.swift */,
+				FF000012 /* UserSearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -141,6 +156,8 @@
 				BB000043 /* Components */,
 				BB000044 /* Feed */,
 				BB000045 /* Chat */,
+				FF000040 /* Search */,
+				FF000041 /* Profile */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,12 +192,31 @@
 			path = Feed;
 			sourceTree = "<group>";
 		};
+		FF000040 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FF000013 /* UserSearchRow.swift */,
+				FF000014 /* RecentSearchesSection.swift */,
+				FF000015 /* UserSearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FF000041 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FF000016 /* UserProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		CC000040 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				CC000010 /* PostService.swift */,
 				CC000011 /* FirebaseConfiguration.swift */,
 				EE000012 /* ChatService.swift */,
+				FF000010 /* UserSearchService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -190,6 +226,7 @@
 			children = (
 				CC000012 /* PostRepository.swift */,
 				EE000013 /* ChatRepository.swift */,
+				FF000011 /* UserSearchRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -294,6 +331,13 @@
 				EE000009 /* ChatListRow.swift in Sources */,
 				EE00000A /* ChatDetailView.swift in Sources */,
 				EE00000B /* ChatListView.swift in Sources */,
+				FF000001 /* UserSearchService.swift in Sources */,
+				FF000002 /* UserSearchRepository.swift in Sources */,
+				FF000003 /* UserSearchViewModel.swift in Sources */,
+				FF000004 /* UserSearchRow.swift in Sources */,
+				FF000005 /* RecentSearchesSection.swift in Sources */,
+				FF000006 /* UserSearchView.swift in Sources */,
+				FF000007 /* UserProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
