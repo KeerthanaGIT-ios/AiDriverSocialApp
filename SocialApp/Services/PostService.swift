@@ -26,6 +26,7 @@ enum PostServiceError: LocalizedError {
 
 protocol PostServiceProtocol {
     func fetchPosts() async throws -> [Post]
+    func fetchPosts(byUserID userID: String) async throws -> [Post]
     func toggleLike(postID: String, userID: String) async throws
     func createPost(_ post: Post) async throws
 }
@@ -54,6 +55,12 @@ final class FirebasePostService: PostServiceProtocol {
         } catch {
             throw PostServiceError.unknown(error)
         }
+    }
+
+    func fetchPosts(byUserID userID: String) async throws -> [Post] {
+        // TODO: Implement filtered Firestore query by author ID
+        let allPosts = try await fetchPosts()
+        return allPosts.filter { $0.author.id == userID }
     }
 
     func toggleLike(postID: String, userID: String) async throws {
@@ -181,6 +188,11 @@ final class MockPostService: PostServiceProtocol {
         // Simulate network delay
         try? await Task.sleep(for: .milliseconds(300))
         return posts
+    }
+
+    func fetchPosts(byUserID userID: String) async throws -> [Post] {
+        try? await Task.sleep(for: .milliseconds(200))
+        return posts.filter { $0.author.id == userID }
     }
 
     func toggleLike(postID: String, userID: String) async throws {
