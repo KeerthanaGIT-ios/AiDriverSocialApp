@@ -35,10 +35,7 @@ struct UserProfileView: View {
         .navigationTitle(user.displayName)
         .navigationBarTitleDisplayMode(.inline)
         .navigationDestination(for: Post.self) { post in
-            PostDetailView(
-                post: post,
-                onLikeToggle: { viewModel.toggleLike(on: post) }
-            )
+            PostDetailView(post: post)
         }
         .task {
             await viewModel.loadProfile()
