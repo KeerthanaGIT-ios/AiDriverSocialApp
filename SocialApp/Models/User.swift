@@ -13,7 +13,7 @@ struct User: Identifiable, Codable, Hashable {
 // MARK: - Current User
 
 extension User {
-    static let currentUser = User(id: "current-user", displayName: "You", username: "me", avatarURL: nil)
+    // currentUser is defined in the mock data extension below
 }
 
 // MARK: - Mock Data
