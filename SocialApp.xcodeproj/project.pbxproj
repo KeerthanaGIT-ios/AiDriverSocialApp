@@ -39,6 +39,11 @@
 		FF000005 /* RecentSearchesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000014 /* RecentSearchesSection.swift */; };
 		FF000006 /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000015 /* UserSearchView.swift */; };
 		FF000007 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000016 /* UserProfileView.swift */; };
+		GG000001 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000010 /* UserProfileViewModel.swift */; };
+		GG000002 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000011 /* ProfileHeaderView.swift */; };
+		GG000003 /* ProfileStatsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000012 /* ProfileStatsRow.swift */; };
+		GG000004 /* ProfilePostsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000013 /* ProfilePostsGridView.swift */; };
+		GG000005 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000014 /* PostDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +80,11 @@
 		FF000014 /* RecentSearchesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesSection.swift; sourceTree = "<group>"; };
 		FF000015 /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
 		FF000016 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		GG000010 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		GG000011 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		GG000012 /* ProfileStatsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatsRow.swift; sourceTree = "<group>"; };
+		GG000013 /* ProfilePostsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostsGridView.swift; sourceTree = "<group>"; };
+		GG000014 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +156,7 @@
 				EE000014 /* ChatListViewModel.swift */,
 				EE000015 /* ChatDetailViewModel.swift */,
 				FF000012 /* UserSearchViewModel.swift */,
+				GG000010 /* UserProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -206,6 +217,10 @@
 			isa = PBXGroup;
 			children = (
 				FF000016 /* UserProfileView.swift */,
+				GG000011 /* ProfileHeaderView.swift */,
+				GG000012 /* ProfileStatsRow.swift */,
+				GG000013 /* ProfilePostsGridView.swift */,
+				GG000014 /* PostDetailView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -338,6 +353,11 @@
 				FF000005 /* RecentSearchesSection.swift in Sources */,
 				FF000006 /* UserSearchView.swift in Sources */,
 				FF000007 /* UserProfileView.swift in Sources */,
+				GG000001 /* UserProfileViewModel.swift in Sources */,
+				GG000002 /* ProfileHeaderView.swift in Sources */,
+				GG000003 /* ProfileStatsRow.swift in Sources */,
+				GG000004 /* ProfilePostsGridView.swift in Sources */,
+				GG000005 /* PostDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
