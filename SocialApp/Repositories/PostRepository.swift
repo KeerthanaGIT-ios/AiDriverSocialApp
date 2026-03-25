@@ -23,6 +23,17 @@ final class PostRepository: @unchecked Sendable {
         }
     }
 
+    /// Fetches posts by a specific user.
+    func fetchPosts(byUserID userID: String) async throws -> [Post] {
+        do {
+            return try await service.fetchPosts(byUserID: userID)
+        } catch let error as PostServiceError {
+            throw mapError(error)
+        } catch {
+            throw PostRepositoryError.underlying(error)
+        }
+    }
+
     /// Toggles like status on a post for the given user.
     func toggleLike(postID: String, userID: String) async throws {
         do {

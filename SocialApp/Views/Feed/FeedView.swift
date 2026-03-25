@@ -4,43 +4,57 @@ struct FeedView: View {
     @ObservedObject var viewModel: FeedViewModel
 
     var body: some View {
-        NavigationStack {
-            Group {
-                if viewModel.isLoading && viewModel.posts.isEmpty {
-                    loadingView
-                } else if let error = viewModel.error {
-                    errorView(message: error)
-                } else if viewModel.posts.isEmpty {
-                    emptyView
-                } else {
-                    feedList
-                }
+        Group {
+            if viewModel.isLoading && viewModel.posts.isEmpty {
+                loadingView
+            } else if let error = viewModel.error, viewModel.posts.isEmpty {
+                errorView(message: error)
+            } else if viewModel.posts.isEmpty {
+                emptyView
+            } else {
+                feedContent
             }
-            .navigationTitle("Feed")
-            .task {
-                await viewModel.loadPosts()
+        }
+        .background(Color(.systemBackground))
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Text("SocialApp")
+                    .font(.title3)
+                    .fontWeight(.bold)
             }
+        }
+        .task {
+            await viewModel.loadPosts()
+            viewModel.stories = Story.mockStories
         }
     }
 
-    // MARK: - Feed List
+    // MARK: - Feed Content
 
-    private var feedList: some View {
+    private var feedContent: some View {
         ScrollView {
-            LazyVStack(spacing: 12) {
+            LazyVStack(spacing: 0) {
+                StoriesBarView(stories: viewModel.stories)
+
+                Divider()
+
                 ForEach(viewModel.posts) { post in
-                    PostCell(
+                    PostCardView(
                         post: post,
+                        isLiked: post.isLikedByCurrentUser,
+                        isBookmarked: post.isBookmarkedByCurrentUser,
                         onLike: { viewModel.toggleLike(on: post) },
+                        onDoubleTapLike: { viewModel.likeViaDoubleTap(on: post) },
                         onComment: { /* TODO: navigate to comments */ },
-                        onShare: { /* TODO: share sheet */ }
+                        onShare: { /* TODO: share sheet */ },
+                        onBookmark: { viewModel.toggleBookmark(on: post) }
                     )
+
+                    Divider()
                 }
             }
-            .padding(.horizontal)
-            .padding(.vertical, 8)
         }
-        .background(Color(.systemGroupedBackground))
         .refreshable {
             await viewModel.loadPosts()
         }
@@ -84,5 +98,7 @@ struct FeedView: View {
 // MARK: - Preview
 
 #Preview {
-    FeedView(viewModel: FeedViewModel())
+    NavigationStack {
+        FeedView(viewModel: FeedViewModel())
+    }
 }

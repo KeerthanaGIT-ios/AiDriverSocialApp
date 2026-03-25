@@ -23,17 +23,14 @@ struct ContentView: View {
                 case .feed:
                     NavigationStack { FeedView(viewModel: feedViewModel) }
                 case .search:
-                    UserSearchView()
+                    ExploreView()
                 case .create:
                     CreatePostView(viewModel: createPostViewModel, feedViewModel: feedViewModel)
                 case .chat:
                     ChatListView(navigationPath: $chatNavigationPath)
                 case .profile:
                     NavigationStack {
-                        Text("Profile")
-                            .font(.title2)
-                            .foregroundStyle(.secondary)
-                            .navigationTitle("Profile")
+                        UserProfileView(user: .currentUser)
                     }
                 }
             }
