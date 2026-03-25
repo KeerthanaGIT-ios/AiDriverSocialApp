@@ -4,10 +4,12 @@ struct Post: Identifiable, Codable, Hashable {
     let id: String
     let author: User
     let textContent: String
+    var caption: String = ""
     let imageURL: URL?
     var likeCount: Int
     var commentCount: Int
     var isLikedByCurrentUser: Bool
+    var isBookmarkedByCurrentUser: Bool = false
     let createdAt: Date
 }
 
@@ -214,6 +216,76 @@ extension Post {
             commentCount: 67,
             isLikedByCurrentUser: true,
             createdAt: Date().addingTimeInterval(-100800)
+        ),
+        Post(
+            id: "post-021",
+            author: .mockAlice,
+            textContent: "Golden hour at the beach. Sometimes you just need to unplug.",
+            imageURL: URL(string: "https://picsum.photos/400?random=21"),
+            likeCount: 95,
+            commentCount: 14,
+            isLikedByCurrentUser: true,
+            createdAt: Date().addingTimeInterval(-259200)
+        ),
+        Post(
+            id: "post-022",
+            author: .mockAlice,
+            textContent: "New desk setup is finally complete! Productivity mode activated.",
+            imageURL: URL(string: "https://picsum.photos/400?random=22"),
+            likeCount: 73,
+            commentCount: 9,
+            isLikedByCurrentUser: false,
+            createdAt: Date().addingTimeInterval(-345600)
+        ),
+        Post(
+            id: "post-023",
+            author: .mockEva,
+            textContent: "Street photography walk through downtown. Found some incredible light.",
+            imageURL: URL(string: "https://picsum.photos/400?random=23"),
+            likeCount: 112,
+            commentCount: 18,
+            isLikedByCurrentUser: false,
+            createdAt: Date().addingTimeInterval(-432000)
+        ),
+        Post(
+            id: "post-024",
+            author: .mockAlice,
+            textContent: "Just shipped v2.0 of my app! Huge thanks to everyone who beta tested.",
+            imageURL: URL(string: "https://picsum.photos/400?random=24"),
+            likeCount: 201,
+            commentCount: 34,
+            isLikedByCurrentUser: true,
+            createdAt: Date().addingTimeInterval(-518400)
+        ),
+        Post(
+            id: "post-025",
+            author: .mockGrace,
+            textContent: "Training my first neural network from scratch. The loss curve is beautiful.",
+            imageURL: URL(string: "https://picsum.photos/400?random=25"),
+            likeCount: 88,
+            commentCount: 11,
+            isLikedByCurrentUser: false,
+            createdAt: Date().addingTimeInterval(-604800)
+        ),
+        Post(
+            id: "post-026",
+            author: .mockAlice,
+            textContent: "Rainy day coding session with some lo-fi beats. Pure bliss.",
+            imageURL: URL(string: "https://picsum.photos/400?random=26"),
+            likeCount: 54,
+            commentCount: 6,
+            isLikedByCurrentUser: false,
+            createdAt: Date().addingTimeInterval(-691200)
+        ),
+        Post(
+            id: "post-027",
+            author: .mockBob,
+            textContent: "Finally tried that new ramen place downtown. 10/10 would recommend.",
+            imageURL: URL(string: "https://picsum.photos/400?random=27"),
+            likeCount: 76,
+            commentCount: 15,
+            isLikedByCurrentUser: true,
+            createdAt: Date().addingTimeInterval(-777600)
         ),
     ]
 }

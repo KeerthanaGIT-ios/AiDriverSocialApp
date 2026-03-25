@@ -33,10 +33,7 @@ struct ContentView: View {
                     ChatListView(navigationPath: $chatNavigationPath)
                 case .profile:
                     NavigationStack {
-                        Text("Profile")
-                            .font(.title2)
-                            .foregroundStyle(.secondary)
-                            .navigationTitle("Profile")
+                        UserProfileView(user: .currentUser)
                     }
                 }
             }

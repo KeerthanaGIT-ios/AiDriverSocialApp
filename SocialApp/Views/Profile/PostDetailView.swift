@@ -3,6 +3,7 @@ import SwiftUI
 struct PostDetailView: View {
     let post: Post
 
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {

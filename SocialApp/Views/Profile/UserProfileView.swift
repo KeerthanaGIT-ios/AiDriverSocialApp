@@ -3,34 +3,73 @@ import SwiftUI
 struct UserProfileView: View {
     let user: User
 
+    @StateObject private var viewModel: UserProfileViewModel
+
+    init(user: User) {
+        self.user = user
+        _viewModel = StateObject(wrappedValue: UserProfileViewModel(user: user))
+    }
+
     var body: some View {
-        VStack(spacing: 12) {
-            AvatarView(
-                url: user.avatarURL,
-                displayName: user.displayName,
-                size: 100
-            )
+        ScrollView {
+            VStack(spacing: 16) {
+                ProfileHeaderView(user: user)
+                    .padding(.top, 12)
 
-            Text(user.displayName)
-                .font(.title)
-                .fontWeight(.bold)
+                if !viewModel.isCurrentUser {
+                    followButton
+                }
 
-            Text("@\(user.username)")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+                ProfileStatsRow(
+                    postsCount: viewModel.postsCount,
+                    followersCount: viewModel.followersCount,
+                    followingCount: viewModel.followingCount
+                )
+                .padding(.horizontal)
 
-            Spacer()
+                Divider()
 
-            Text("Profile details coming soon")
-                .font(.subheadline)
-                .foregroundStyle(.gray)
-
-            Spacer()
+                ProfilePostsGridView(posts: viewModel.posts)
+            }
         }
-        .padding()
-        .frame(maxWidth: .infinity)
         .navigationTitle(user.displayName)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationDestination(for: Post.self) { post in
+            PostDetailView(
+                post: post,
+                onLikeToggle: { viewModel.toggleLike(on: post) }
+            )
+        }
+        .task {
+            await viewModel.loadProfile()
+        }
+    }
+
+    // MARK: - Follow Button
+
+    private var followButton: some View {
+        Button {
+            viewModel.toggleFollow()
+        } label: {
+            Text(viewModel.isFollowing ? "Following" : "Follow")
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
+                .foregroundStyle(viewModel.isFollowing ? .blue : .white)
+                .background(
+                    viewModel.isFollowing
+                        ? AnyShapeStyle(.clear)
+                        : AnyShapeStyle(.blue)
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(.blue, lineWidth: viewModel.isFollowing ? 1 : 0)
+                )
+        }
+        .padding(.horizontal, 32)
+        .accessibilityLabel(viewModel.isFollowing ? "Unfollow" : "Follow")
     }
 }
 
