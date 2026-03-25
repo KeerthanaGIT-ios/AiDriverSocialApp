@@ -39,6 +39,18 @@
 		FF000005 /* RecentSearchesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000014 /* RecentSearchesSection.swift */; };
 		FF000006 /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000015 /* UserSearchView.swift */; };
 		FF000007 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000016 /* UserProfileView.swift */; };
+		GG000001 /* ExploreGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000010 /* ExploreGridItem.swift */; };
+		GG000002 /* ExploreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000011 /* ExploreService.swift */; };
+		GG000003 /* ExploreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000012 /* ExploreRepository.swift */; };
+		GG000004 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000013 /* ExploreViewModel.swift */; };
+		GG000005 /* ExploreGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000014 /* ExploreGridCell.swift */; };
+		GG000006 /* ExploreGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000015 /* ExploreGridView.swift */; };
+		GG000007 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000016 /* ExploreView.swift */; };
+		GG000009 /* ExploreGridPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000018 /* ExploreGridPattern.swift */; };
+		GG000008 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000017 /* PostDetailView.swift */; };
+		HH000001 /* CreatePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = HH000010 /* CreatePostViewModel.swift */; };
+		HH000002 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = HH000011 /* CreatePostView.swift */; };
+		HH000003 /* CreatePostComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = HH000012 /* CreatePostComposeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +87,18 @@
 		FF000014 /* RecentSearchesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesSection.swift; sourceTree = "<group>"; };
 		FF000015 /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
 		FF000016 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		GG000010 /* ExploreGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGridItem.swift; sourceTree = "<group>"; };
+		GG000011 /* ExploreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreService.swift; sourceTree = "<group>"; };
+		GG000012 /* ExploreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRepository.swift; sourceTree = "<group>"; };
+		GG000013 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		GG000014 /* ExploreGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGridCell.swift; sourceTree = "<group>"; };
+		GG000015 /* ExploreGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGridView.swift; sourceTree = "<group>"; };
+		GG000016 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		GG000018 /* ExploreGridPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGridPattern.swift; sourceTree = "<group>"; };
+		GG000017 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		HH000010 /* CreatePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewModel.swift; sourceTree = "<group>"; };
+		HH000011 /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
+		HH000012 /* CreatePostComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostComposeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +159,7 @@
 				BB000011 /* Post.swift */,
 				EE000010 /* Message.swift */,
 				EE000011 /* Conversation.swift */,
+				GG000010 /* ExploreGridItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,6 +171,8 @@
 				EE000014 /* ChatListViewModel.swift */,
 				EE000015 /* ChatDetailViewModel.swift */,
 				FF000012 /* UserSearchViewModel.swift */,
+				GG000013 /* ExploreViewModel.swift */,
+				HH000010 /* CreatePostViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -158,6 +185,8 @@
 				BB000045 /* Chat */,
 				FF000040 /* Search */,
 				FF000041 /* Profile */,
+				GG000040 /* Explore */,
+				HH000040 /* Create */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				FF000016 /* UserProfileView.swift */,
+				GG000017 /* PostDetailView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -217,6 +247,7 @@
 				CC000011 /* FirebaseConfiguration.swift */,
 				EE000012 /* ChatService.swift */,
 				FF000010 /* UserSearchService.swift */,
+				GG000011 /* ExploreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -227,8 +258,29 @@
 				CC000012 /* PostRepository.swift */,
 				EE000013 /* ChatRepository.swift */,
 				FF000011 /* UserSearchRepository.swift */,
+				GG000012 /* ExploreRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+	GG000040 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				GG000014 /* ExploreGridCell.swift */,
+				GG000015 /* ExploreGridView.swift */,
+				GG000018 /* ExploreGridPattern.swift */,
+				GG000016 /* ExploreView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+	HH000040 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				HH000011 /* CreatePostView.swift */,
+				HH000012 /* CreatePostComposeView.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +390,18 @@
 				FF000005 /* RecentSearchesSection.swift in Sources */,
 				FF000006 /* UserSearchView.swift in Sources */,
 				FF000007 /* UserProfileView.swift in Sources */,
+				GG000001 /* ExploreGridItem.swift in Sources */,
+				GG000002 /* ExploreService.swift in Sources */,
+				GG000003 /* ExploreRepository.swift in Sources */,
+				GG000004 /* ExploreViewModel.swift in Sources */,
+				GG000005 /* ExploreGridCell.swift in Sources */,
+				GG000006 /* ExploreGridView.swift in Sources */,
+				GG000007 /* ExploreView.swift in Sources */,
+				GG000009 /* ExploreGridPattern.swift in Sources */,
+				GG000008 /* PostDetailView.swift in Sources */,
+				HH000001 /* CreatePostViewModel.swift in Sources */,
+				HH000002 /* CreatePostView.swift in Sources */,
+				HH000003 /* CreatePostComposeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

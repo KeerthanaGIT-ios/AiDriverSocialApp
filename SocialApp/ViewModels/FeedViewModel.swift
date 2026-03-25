@@ -33,6 +33,10 @@ final class FeedViewModel: ObservableObject {
         isLoading = false
     }
 
+    func addPost(_ post: Post) {
+        posts.insert(post, at: 0)
+    }
+
     func toggleLike(on post: Post) {
         guard let index = posts.firstIndex(where: { $0.id == post.id }) else { return }
 
