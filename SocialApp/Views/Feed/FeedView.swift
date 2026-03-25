@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FeedView: View {
-    @StateObject private var viewModel = FeedViewModel()
+    @ObservedObject var viewModel: FeedViewModel
 
     var body: some View {
         Group {
@@ -99,6 +99,6 @@ struct FeedView: View {
 
 #Preview {
     NavigationStack {
-        FeedView()
+        FeedView(viewModel: FeedViewModel())
     }
 }

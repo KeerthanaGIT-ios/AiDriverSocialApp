@@ -10,6 +10,12 @@ struct User: Identifiable, Codable, Hashable {
     var followingCount: Int = 0
 }
 
+// MARK: - Current User
+
+extension User {
+    // currentUser is defined in the mock data extension below
+}
+
 // MARK: - Mock Data
 
 extension User {

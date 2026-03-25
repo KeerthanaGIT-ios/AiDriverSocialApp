@@ -34,6 +34,10 @@ final class FeedViewModel: ObservableObject {
         isLoading = false
     }
 
+    func addPost(_ post: Post) {
+        posts.insert(post, at: 0)
+    }
+
     func loadStories() {
         stories = Story.mockStories
     }

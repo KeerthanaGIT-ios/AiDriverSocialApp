@@ -59,6 +59,9 @@
 		II000007 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000016 /* ExploreView.swift */; };
 		II000009 /* ExploreGridPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000018 /* ExploreGridPattern.swift */; };
 		II000008 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000017 /* PostDetailView.swift */; };
+		JJ000001 /* CreatePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = JJ000010 /* CreatePostViewModel.swift */; };
+		JJ000002 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = JJ000011 /* CreatePostView.swift */; };
+		JJ000003 /* CreatePostComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = JJ000012 /* CreatePostComposeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +118,9 @@
 		II000016 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		II000018 /* ExploreGridPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGridPattern.swift; sourceTree = "<group>"; };
 		II000017 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		JJ000010 /* CreatePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewModel.swift; sourceTree = "<group>"; };
+		JJ000011 /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
+		JJ000012 /* CreatePostComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostComposeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +196,7 @@
 				FF000012 /* UserSearchViewModel.swift */,
 				II000013 /* ExploreViewModel.swift */,
 				HH000010 /* UserProfileViewModel.swift */,
+				JJ000010 /* CreatePostViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -203,6 +210,7 @@
 				FF000040 /* Search */,
 				FF000041 /* Profile */,
 				II000040 /* Explore */,
+				JJ000040 /* Create */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +305,15 @@
 				II000016 /* ExploreView.swift */,
 			);
 			path = Explore;
+			sourceTree = "<group>";
+		};
+	JJ000040 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				JJ000011 /* CreatePostView.swift */,
+				JJ000012 /* CreatePostComposeView.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,6 +443,9 @@
 				II000007 /* ExploreView.swift in Sources */,
 				II000009 /* ExploreGridPattern.swift in Sources */,
 				II000008 /* PostDetailView.swift in Sources */,
+				JJ000001 /* CreatePostViewModel.swift in Sources */,
+				JJ000002 /* CreatePostView.swift in Sources */,
+				JJ000003 /* CreatePostComposeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

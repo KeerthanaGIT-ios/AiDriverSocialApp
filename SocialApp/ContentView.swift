@@ -4,6 +4,8 @@ struct ContentView: View {
 
     @State private var selectedTab: Tab = .feed
     @State private var chatNavigationPath = NavigationPath()
+    @StateObject private var feedViewModel = FeedViewModel()
+    @StateObject private var createPostViewModel = CreatePostViewModel()
 
     enum Tab: String, CaseIterable {
         case feed, search, create, chat, profile
@@ -19,16 +21,11 @@ struct ContentView: View {
             Group {
                 switch selectedTab {
                 case .feed:
-                    NavigationStack { FeedView() }
+                    NavigationStack { FeedView(viewModel: feedViewModel) }
                 case .search:
                     ExploreView()
                 case .create:
-                    NavigationStack {
-                        Text("Create Post")
-                            .font(.title2)
-                            .foregroundStyle(.secondary)
-                            .navigationTitle("New Post")
-                    }
+                    CreatePostView(viewModel: createPostViewModel, feedViewModel: feedViewModel)
                 case .chat:
                     ChatListView(navigationPath: $chatNavigationPath)
                 case .profile:
@@ -43,6 +40,12 @@ struct ContentView: View {
             // Premium Tab Bar — hidden in chat detail
             if !isInChatDetail {
                 premiumTabBar
+            }
+        }
+        .onChange(of: createPostViewModel.didFinishPosting) { _, finished in
+            if finished {
+                selectedTab = .feed
+                createPostViewModel.reset()
             }
         }
     }
