@@ -50,6 +50,15 @@
 		HH000003 /* ProfileStatsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = HH000012 /* ProfileStatsRow.swift */; };
 		HH000004 /* ProfilePostsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = HH000013 /* ProfilePostsGridView.swift */; };
 		HH000005 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = HH000014 /* PostDetailView.swift */; };
+		II000001 /* ExploreGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000010 /* ExploreGridItem.swift */; };
+		II000002 /* ExploreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000011 /* ExploreService.swift */; };
+		II000003 /* ExploreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000012 /* ExploreRepository.swift */; };
+		II000004 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000013 /* ExploreViewModel.swift */; };
+		II000005 /* ExploreGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000014 /* ExploreGridCell.swift */; };
+		II000006 /* ExploreGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000015 /* ExploreGridView.swift */; };
+		II000007 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000016 /* ExploreView.swift */; };
+		II000009 /* ExploreGridPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000018 /* ExploreGridPattern.swift */; };
+		II000008 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000017 /* PostDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +106,15 @@
 		HH000012 /* ProfileStatsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatsRow.swift; sourceTree = "<group>"; };
 		HH000013 /* ProfilePostsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostsGridView.swift; sourceTree = "<group>"; };
 		HH000014 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		II000010 /* ExploreGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGridItem.swift; sourceTree = "<group>"; };
+		II000011 /* ExploreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreService.swift; sourceTree = "<group>"; };
+		II000012 /* ExploreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRepository.swift; sourceTree = "<group>"; };
+		II000013 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		II000014 /* ExploreGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGridCell.swift; sourceTree = "<group>"; };
+		II000015 /* ExploreGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGridView.swift; sourceTree = "<group>"; };
+		II000016 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		II000018 /* ExploreGridPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGridPattern.swift; sourceTree = "<group>"; };
+		II000017 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +176,7 @@
 				GG000010 /* Story.swift */,
 				EE000010 /* Message.swift */,
 				EE000011 /* Conversation.swift */,
+				II000010 /* ExploreGridItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,6 +188,7 @@
 				EE000014 /* ChatListViewModel.swift */,
 				EE000015 /* ChatDetailViewModel.swift */,
 				FF000012 /* UserSearchViewModel.swift */,
+				II000013 /* ExploreViewModel.swift */,
 				HH000010 /* UserProfileViewModel.swift */,
 			);
 			path = ViewModels;
@@ -182,6 +202,7 @@
 				BB000045 /* Chat */,
 				FF000040 /* Search */,
 				FF000041 /* Profile */,
+				II000040 /* Explore */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				FF000016 /* UserProfileView.swift */,
+				II000017 /* PostDetailView.swift */,
 				HH000011 /* ProfileHeaderView.swift */,
 				HH000012 /* ProfileStatsRow.swift */,
 				HH000013 /* ProfilePostsGridView.swift */,
@@ -250,6 +272,7 @@
 				CC000011 /* FirebaseConfiguration.swift */,
 				EE000012 /* ChatService.swift */,
 				FF000010 /* UserSearchService.swift */,
+				II000011 /* ExploreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -260,8 +283,20 @@
 				CC000012 /* PostRepository.swift */,
 				EE000013 /* ChatRepository.swift */,
 				FF000011 /* UserSearchRepository.swift */,
+				II000012 /* ExploreRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+	II000040 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				II000014 /* ExploreGridCell.swift */,
+				II000015 /* ExploreGridView.swift */,
+				II000018 /* ExploreGridPattern.swift */,
+				II000016 /* ExploreView.swift */,
+			);
+			path = Explore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +417,15 @@
 				HH000003 /* ProfileStatsRow.swift in Sources */,
 				HH000004 /* ProfilePostsGridView.swift in Sources */,
 				HH000005 /* PostDetailView.swift in Sources */,
+				II000001 /* ExploreGridItem.swift in Sources */,
+				II000002 /* ExploreService.swift in Sources */,
+				II000003 /* ExploreRepository.swift in Sources */,
+				II000004 /* ExploreViewModel.swift in Sources */,
+				II000005 /* ExploreGridCell.swift in Sources */,
+				II000006 /* ExploreGridView.swift in Sources */,
+				II000007 /* ExploreView.swift in Sources */,
+				II000009 /* ExploreGridPattern.swift in Sources */,
+				II000008 /* PostDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
