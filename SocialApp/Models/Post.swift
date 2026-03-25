@@ -4,10 +4,12 @@ struct Post: Identifiable, Codable, Hashable {
     let id: String
     let author: User
     let textContent: String
+    var caption: String = ""
     let imageURL: URL?
     var likeCount: Int
     var commentCount: Int
     var isLikedByCurrentUser: Bool
+    var isBookmarkedByCurrentUser: Bool = false
     let createdAt: Date
 }
 

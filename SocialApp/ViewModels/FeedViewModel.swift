@@ -6,6 +6,7 @@ final class FeedViewModel: ObservableObject {
     // MARK: - Published State
 
     @Published var posts: [Post] = []
+    @Published var stories: [Story] = []
     @Published var isLoading: Bool = false
     @Published var error: String?
 
@@ -31,6 +32,38 @@ final class FeedViewModel: ObservableObject {
         }
 
         isLoading = false
+    }
+
+    func loadStories() {
+        stories = Story.mockStories
+    }
+
+    func toggleBookmark(on post: Post) {
+        guard let index = posts.firstIndex(where: { $0.id == post.id }) else { return }
+        posts[index].isBookmarkedByCurrentUser.toggle()
+    }
+
+    func likeViaDoubleTap(on post: Post) {
+        guard let index = posts.firstIndex(where: { $0.id == post.id }) else { return }
+        // Only like if not already liked — never unlike via double-tap
+        guard !posts[index].isLikedByCurrentUser else { return }
+        posts[index].isLikedByCurrentUser = true
+        posts[index].likeCount += 1
+
+        let postID = post.id
+        let userID = "current-user"
+        Task {
+            do {
+                try await repository.toggleLike(postID: postID, userID: userID)
+            } catch {
+                // Revert on failure
+                if let idx = posts.firstIndex(where: { $0.id == postID }) {
+                    posts[idx].isLikedByCurrentUser = false
+                    posts[idx].likeCount -= 1
+                }
+                self.error = error.localizedDescription
+            }
+        }
     }
 
     func toggleLike(on post: Post) {

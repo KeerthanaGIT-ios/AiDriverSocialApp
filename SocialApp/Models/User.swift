@@ -133,6 +133,7 @@ extension User {
         followingCount: 211
     )
 
+    /// The current logged-in user (Alice).
     static let currentUser = User.mockAlice
 
     static let mockAllUsers: [User] = [
